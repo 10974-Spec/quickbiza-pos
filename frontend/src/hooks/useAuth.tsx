@@ -6,6 +6,7 @@ interface User {
     username: string;
     full_name: string;
     role: string;
+    company_id: number;
     permissions?: string[];
     profile_image?: string;
 }

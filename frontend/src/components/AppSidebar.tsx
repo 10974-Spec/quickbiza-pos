@@ -30,8 +30,10 @@ import {
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import { useModal } from "@/context/ModalContext";
+import { TopNavLayout } from '../layouts/TopNavLayout';
+import AppIconAsset from '@/assets/Appicon.png';
 import { useLicense } from "@/hooks/useLicense";
-const APP_ICON = "/Appicon.png"; // served from public/
+const APP_ICON = AppIconAsset;
 
 import { useNavItems } from "@/hooks/useNavItems";
 import { Icon } from "@/components/ui/Icon";

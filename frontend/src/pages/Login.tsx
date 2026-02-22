@@ -323,13 +323,13 @@ export default function Login() {
                         <p className="form-footer" style={{ margin: 0 }}>
                             <span style={{ color: '#a1a1aa', fontWeight: 500 }}>No account yet? </span>
                             <a
-                                href="https://quickbiza-web.vercel.app/register"
+                                href="https://quickbiza.vercel.app/register"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => {
                                     if (window.electron && window.electron.openExternal) {
                                         e.preventDefault();
-                                        window.electron.openExternal('https://quickbiza-web.vercel.app/register');
+                                        window.electron.openExternal('https://quickbiza.vercel.app/register');
                                     }
                                 }}
                             >
@@ -377,7 +377,7 @@ export default function Login() {
                         </p>
 
                         <a
-                            href="https://quickbiza-web.vercel.app/license"
+                            href="https://quickbiza.vercel.app/license"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-primary text-white"
@@ -388,7 +388,7 @@ export default function Login() {
                             onClick={(e) => {
                                 if (window.electron && window.electron.openExternal) {
                                     e.preventDefault();
-                                    window.electron.openExternal('https://quickbiza-web.vercel.app/license');
+                                    window.electron.openExternal('https://quickbiza.vercel.app/license');
                                 }
                             }}
                         >

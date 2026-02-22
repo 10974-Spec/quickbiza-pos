@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import LogoAsset from '../../public/logo.png';
 
 /**
  * SplashScreen — shown for ~10 s when Electron first opens.
@@ -34,7 +35,7 @@ export default function SplashScreen({ onDone }: { onDone: () => void }) {
         >
             {/* Logo — background removed via mix-blend-mode + drop-shadow filter */}
             <img
-                src="/logo.png"
+                src={LogoAsset}
                 alt="QuickBiza"
                 style={{
                     width: '480px',

@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const isProduction = import.meta.env.PROD;
-const API_BASE_URL = isProduction ? 'http://localhost:5000/api' : 'http://localhost:5000/api';
+// Use 127.0.0.1 explicitly — more stable than 'localhost' on Windows (avoids IPv6 vs IPv4 ambiguity)
+const API_BASE_URL = isProduction ? 'http://127.0.0.1:5000/api' : 'http://127.0.0.1:5000/api';
 
 // Create axios instance
 const api = axios.create({
