@@ -1,0 +1,1 @@
+{"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3MTIzOTA0MywiZXhwIjoxNzcxMzI1NDQzfQ.hwREcVMIAUxx_qfGRTYrnEvcAZ11_MyxGjT9Ay_sK6o","user":{"id":1,"username":"admin","full_name":"System Administrator","role":"admin"}}

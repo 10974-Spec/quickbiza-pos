@@ -1,0 +1,1365 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  /* zinc-200 */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+  /* zinc-300 */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  /* zinc-700 */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+  /* zinc-600 */
+}
+
+@layer base {
+  :root {
+    /* --- NEW PROFESSIONAL DEFAULT THEME (Based on WebLogin/Landing) --- */
+
+    /* Warm Grey Background */
+    --background: 40 10% 94%;
+    /* #f0ede8 */
+    --foreground: 240 5.9% 10%;
+    /* #18181b */
+
+    /* Pure White Card */
+    --card: 0 0% 100%;
+    --card-foreground: 240 5.9% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 5.9% 10%;
+
+    /* Black Primary (Professional) */
+    --primary: 240 5.9% 10%;
+    /* #18181b */
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft Grey Secondary */
+    --secondary: 40 10% 96%;
+    /* #f5f1ec */
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 40 10% 96%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Soft Borders */
+    --border: 30 10% 88%;
+    /* #e2ddd8 */
+    --input: 30 10% 88%;
+    --ring: 240 5.9% 10%;
+
+    /* High Radius for Modern Look */
+    --radius: 1.25rem;
+    /* 20px */
+
+    /* Professional Sidebar - Matches WebLogin Left Panel */
+    --sidebar-background: 40 10% 94%;
+    /* #f0ede8 */
+    --sidebar-foreground: 240 5.9% 10%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 100%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 30 10% 88%;
+    --sidebar-ring: 240 5.9% 10%;
+
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    --info: 221.2 83.2% 53.3%;
+    --info-foreground: 210 40% 98%;
+
+    /* Soft, Elegant Shadows */
+    --neo-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+    --neo-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --neo-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
+    --neo-border: 1px solid var(--border);
+  }
+
+  /* --- Original Neobrutalist Theme (Moved) --- */
+  .theme-neo {
+    /* Zinc-50 Background */
+    --background: 0 0% 98%;
+    --foreground: 240 5.9% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 5.9% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 5.9% 10%;
+
+    /* Orange-600 Primary */
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 10%;
+    /* Strict Black Border #18181b */
+    --input: 240 5.9% 10%;
+    --ring: 24.6 95% 53.1%;
+    --radius: 0.5rem;
+    /* Tighter radius */
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5.9% 10%;
+    --sidebar-primary: 24.6 95% 53.1%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 10%;
+    --sidebar-ring: 24.6 95% 53.1%;
+
+    /* Hard Shadows - Restored */
+    --neo-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+    --neo-shadow-sm: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+    --neo-shadow-lg: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 24.6 95% 53.1%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 24.6 95% 53.1%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 24.6 95% 53.1%;
+  }
+
+  /* Keep legacy themes... */
+  .theme-win7 {
+    --background: 210 50% 92%;
+    /* Aero Blue-Gray */
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 100% 50%;
+    /* Aero Blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 81.4%;
+    --input: 214.3 31.8% 81.4%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.3rem;
+  }
+}
+
+/* Windows 7 Specific Utilities (Preserved) */
+.theme-win7 .neo-card,
+.theme-win7 .card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 245, 255, 0.9) 100%);
+  border: 1px solid rgba(100, 150, 200, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.theme-win7 .neo-button {
+  background: linear-gradient(180deg, #f0f8ff 0%, #dbe8f5 50%, #c1dcf5 51%, #dcecfc 100%);
+  border: 1px solid #8ba0b9;
+  color: #1e395b;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.theme-win7 .neo-button-primary {
+  /* Stronger Blue Aero Gradient */
+  background: linear-gradient(180deg, #f2f9fe 0%, #d6f0fd 45%, #aed9f5 50%, #8dcbf3 100%) !important;
+  border: 1px solid #3c7fb1 !important;
+  color: #1e395b !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.theme-win7 .neo-button-primary:hover {
+  background: linear-gradient(180deg, #eaf6fd 0%, #d9f0fc 45%, #bee6fd 50%, #a7d9f5 100%) !important;
+  box-shadow: 0 0 5px rgba(60, 150, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.theme-win7 .neo-button:hover {
+  background: linear-gradient(180deg, #f5fbff 0%, #e6f2fc 50%, #dcecfc 51%, #e6f2fc 100%);
+  box-shadow: 0 0 5px rgba(60, 150, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.theme-win7 .neo-button:active {
+  background: linear-gradient(180deg, #dcecfc 0%, #c1dcf5 50%, #b0d0ed 51%, #dbe8f5 100%);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: none;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+
+  /* CLEAN/MODERN DEFAULT STYLES */
+  .neo-card {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--neo-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .neo-card:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  .neo-card-flat {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--neo-shadow-sm);
+  }
+
+  .neo-button {
+    @apply rounded-xl font-display font-semibold px-4 py-2 border border-input bg-white text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900;
+    box-shadow: var(--neo-shadow-sm);
+    transition: all 0.2s;
+  }
+
+  .neo-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--neo-shadow);
+  }
+
+  .neo-button:active {
+    transform: translateY(0);
+  }
+
+  /* Primary Action Button - Uses Variable Primary */
+  .neo-button-primary {
+    @apply neo-button text-primary-foreground border-transparent hover:text-primary-foreground !important;
+    background: hsl(var(--primary));
+    /* Enhanced shadow for depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .neo-button-primary:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0.9;
+  }
+
+  .neo-badge {
+    @apply inline-flex items-center rounded-full border border-transparent px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply bg-orange-100 text-orange-800 hover:bg-orange-200;
+    box-shadow: none;
+  }
+
+  .neo-input {
+    @apply rounded-lg border border-input bg-white px-3 py-2 font-body text-sm ring-offset-background;
+    box-shadow: var(--neo-shadow-sm);
+  }
+
+  .neo-input:focus {
+    @apply outline-none ring-2 ring-orange-500/20 border-orange-500;
+  }
+
+  /* --- Refactored Modal Styles --- */
+  .neo-modal {
+    @apply bg-background border border-border rounded-xl;
+    box-shadow: var(--neo-shadow-lg);
+  }
+
+  .neo-modal-header {
+    @apply bg-muted/30 border-b border-border;
+  }
+
+  /* --- Refactored Sidebar Styles --- */
+  .app-sidebar {
+    @apply bg-sidebar border-r border-sidebar-border;
+  }
+
+  .app-sidebar-link {
+    @apply text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground mx-2 rounded-lg transition-all;
+  }
+
+  .app-sidebar-link.active {
+    @apply bg-primary text-primary-foreground shadow-lg shadow-black/5;
+    border: none;
+  }
+}
+
+/* --- Neobrutalist Theme Overrides (Forced Compliance) --- */
+.theme-neo .neo-card,
+.theme-neo .neo-card-flat,
+.theme-neo .neo-input,
+.theme-neo .neo-modal,
+.theme-neo .app-sidebar-link.active {
+  border: 2px solid #18181b !important;
+  box-shadow: 4px 4px 0px 0px #18181b !important;
+  border-radius: 0.5rem !important;
+}
+
+.theme-neo .neo-button {
+  border: 2px solid #18181b !important;
+  box-shadow: 2px 2px 0px 0px #18181b !important;
+  font-weight: 700 !important;
+  border-radius: 0.5rem !important;
+  background-color: #ffffff;
+  color: #18181b;
+}
+
+/* Allow primary colored buttons in Neo theme to actually use the color */
+.theme-neo .neo-button-primary,
+.theme-neo .neo-button.bg-primary {
+  background-color: hsl(var(--primary)) !important;
+  color: var(--primary-foreground) !important;
+}
+
+.theme-neo .neo-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #18181b !important;
+}
+
+.theme-neo .neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
+}
+
+.theme-neo .neo-button-primary {
+  background-color: #ea580c !important;
+  /* Force Orange */
+  color: #ffffff !important;
+}
+
+.theme-neo .neo-badge {
+  border: 2px solid #18181b !important;
+  font-weight: 800;
+}
+
+.theme-neo .app-sidebar-link.active {
+  background-color: #ea580c !important;
+  color: white !important;
+  border: 2px solid #18181b !important;
+  box-shadow: 4px 4px 0px 0px #18181b !important;
+}
+
+.theme-neo .app-sidebar {
+  border-right: 2px solid #18181b !important;
+  background-color: #ffffff !important;
+}
+
+/* Sidebar Header Border in Neo */
+.theme-neo .app-sidebar>div:first-child {
+  border-bottom: 2px solid #18181b !important;
+}
+
+/* Sidebar Footer Border in Neo */
+.theme-neo .app-sidebar>div:last-child button {
+  border-top: 2px solid #18181b !important;
+  border-radius: 0 !important;
+}
+
+/* --- Login / Landing Page Overrides for Neo Theme --- */
+
+.theme-neo .card {
+  border: 2px solid #18181b !important;
+  box-shadow: 8px 8px 0px 0px #18181b !important;
+  border-radius: 0.75rem !important;
+}
+
+.theme-neo .left {
+  border-right: 2px solid #18181b !important;
+}
+
+.theme-neo .u-input {
+  border-bottom: 3px solid #18181b !important;
+  font-weight: 600;
+}
+
+.theme-neo .u-input:focus {
+  border-bottom-color: var(--primary) !important;
+}
+
+.theme-neo .btn-pill {
+  border: 2px solid #18181b !important;
+  box-shadow: 4px 4px 0px 0px #18181b !important;
+  border-radius: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.theme-neo .btn-pill:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #18181b !important;
+}
+
+.theme-neo .btn-pill:active:not(:disabled) {
+  transform: translate(0px, 0px);
+  box-shadow: none !important;
+}
+
+.theme-neo .nav-tag,
+.theme-neo .option-icon-wrap {
+  border: 2px solid #18181b !important;
+  box-shadow: 2px 2px 0px 0px #18181b !important;
+}
+
+.theme-neo .nav-logo-icon {
+  border: 2px solid #18181b !important;
+}
+
+.theme-neo .left-tag {
+  border-width: 2px !important;
+  font-weight: 800 !important;
+}
+
+.theme-neo .option-row {
+  border-bottom: 2px solid #18181b !important;
+}
+
+.theme-neo .option-row:first-of-type {
+  border-top: 2px solid #18181b !important;
+}
+
+/* --- Windows 7 Theme Component Overrides --- */
+
+/* Modal Overrides */
+.theme-win7 .neo-modal {
+  background: rgba(240, 245, 255, 0.95);
+  border: 1px solid rgba(100, 150, 200, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  backdrop-filter: blur(15px);
+}
+
+.theme-win7 .neo-modal-header {
+  background: linear-gradient(180deg, #e6f0fa 0%, #dcecfc 100%);
+  border-bottom: 1px solid rgba(160, 180, 200, 0.6);
+  color: #1e395b;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Tab Overrides */
+.theme-win7 .neo-tab {
+  background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+  border: 1px solid #999;
+  color: #000;
+}
+
+.theme-win7 .neo-tab.active {
+  background: linear-gradient(180deg, #f0f8ff 0%, #dbe8f5 50%, #c1dcf5 51%, #dcecfc 100%);
+  border: 1px solid #3c7fb1;
+  color: #1e395b;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+/* Sidebar Overrides */
+.theme-win7 .app-sidebar {
+  background: linear-gradient(180deg, #f0f6fc 0%, #e1eaf5 100%) !important;
+  border-right: 1px solid rgba(160, 180, 200, 0.6) !important;
+}
+
+.theme-win7 .app-sidebar-link {
+  color: #1e395b !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.theme-win7 .app-sidebar-link:hover {
+  background: linear-gradient(180deg, #fcfdfe 0%, #f0f5fa 100%) !important;
+  border: 1px solid rgba(180, 200, 220, 0.8);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 1);
+}
+
+.theme-win7 .app-sidebar-link.active {
+  background: linear-gradient(180deg, #e6f4fc 0%, #c4e4fa 100%) !important;
+  border: 1px solid #7da2ce !important;
+  color: #1e395b !important;
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Input Overrides */
+.theme-win7 .neo-input {
+  background: #ffffff;
+  border: 1px solid #abadb3;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.theme-win7 .neo-input:focus {
+  border-color: #5794bf;
+  box-shadow: 0 0 0 1px rgba(87, 148, 191, 0.5), inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+/* Card Overrides - General */
+.theme-win7 .neo-card,
+.theme-win7 .neo-card-flat {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Modern SaaS Dark (Fintech) Theme --- */
+.theme-saas {
+  --background: 222 47% 11%;
+  /* #0F172A */
+  --foreground: 210 40% 98%;
+
+  --card: 224 71% 4%;
+  /* Slightly darker/richer */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 217 91% 60%;
+  /* Electric Blue #3B82F6 */
+  --primary-foreground: 222 47% 11%;
+
+  /* Increased brightness for secondary to fix "faded" buttons */
+  --secondary: 215 25% 27%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 215 25% 27%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 258 90% 66%;
+  /* Purple #8B5CF6 */
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 348 83% 47%;
+  /* Red #EF4444 */
+  --destructive-foreground: 210 40% 98%;
+
+  --success: 151 65% 52%;
+  /* Emerald #10B981 */
+
+  --border: 215 27.9% 16.9%;
+  --input: 215 27.9% 16.9%;
+  --ring: 217 91% 60%;
+
+  --radius: 0.75rem;
+
+  --sidebar-background: 222 47% 11%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: 222 47% 11%;
+  --sidebar-accent: 215 15% 20%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 215 27.9% 16.9%;
+}
+
+.theme-saas .neo-card,
+.theme-saas .neo-card-flat,
+.theme-saas .card {
+  border: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  background: #1e293b;
+  /* Solid dark slate instead of translucent */
+}
+
+/* Fix "All White" forms by ensuring inputs have dark bg and light text explicitly */
+.theme-saas input,
+.theme-saas select,
+.theme-saas textarea,
+.theme-saas .neo-input {
+  background-color: #0f172a !important;
+  /* Darkest slate */
+  color: #f8fafc !important;
+  /* Slate 50 */
+  border: 1px solid #334155 !important;
+}
+
+.theme-saas input::placeholder,
+.theme-saas textarea::placeholder {
+  color: #94a3b8 !important;
+  /* Slate 400 */
+}
+
+.theme-saas .neo-button {
+  border: 1px solid #334155;
+  /* Lighter border */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  background: #334155;
+  /* Slate 700 - much more visible than previous */
+  color: #f8fafc;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.theme-saas .neo-button:hover {
+  background: #475569;
+  /* Slate 600 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.theme-saas .neo-button-primary {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
+  border: 1px solid transparent !important;
+  color: white !important;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3) !important;
+}
+
+.theme-saas .neo-button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5) !important;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%) !important;
+}
+
+/* Fix Modal Visibility - Ensure strictly dark background */
+.theme-saas .neo-modal {
+  background-color: #1e293b !important;
+  /* Slate 800 */
+  border: 1px solid #334155;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  color: #f8fafc;
+}
+
+.theme-saas .neo-modal-header {
+  border-bottom: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.theme-saas .app-sidebar {
+  border-right: 1px solid #334155;
+  background: #0f172a;
+  /* Darkest slate */
+}
+
+/* --- Material Design (Google) Theme --- */
+.theme-material {
+  --background: 0 0% 98%;
+  /* Close to white #FAFAFA */
+  --foreground: 0 0% 12%;
+  /* #1F1F1F */
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 12%;
+
+  --primary: 217 89% 61%;
+  /* Google Blueish */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 17% 95%;
+  /* Light Grey */
+  --secondary-foreground: 0 0% 12%;
+
+  --muted: 210 17% 95%;
+  --muted-foreground: 0 0% 40%;
+
+  --accent: 262 52% 47%;
+  /* Google Purple/Deep */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 0 0% 96%;
+  --ring: 217 89% 61%;
+
+  --radius: 1rem;
+  /* Highly rounded */
+
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 0 0% 12%;
+  --sidebar-primary: 217 89% 61%;
+  --sidebar-primary-foreground: 0 0% 90%;
+  /* Slight grey for sidebar active text if needed */
+  --sidebar-accent: 210 17% 95%;
+  --sidebar-accent-foreground: 0 0% 12%;
+  --sidebar-border: 0 0% 0% 0;
+  /* No border, just space/color */
+}
+
+.theme-material .neo-card,
+.theme-material .neo-card-flat,
+.theme-material .card {
+  border: none;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+  /* Elevation 1 */
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-material .neo-card:hover {
+  transform: none;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.12), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 3px 3px -2px rgba(0, 0, 0, 0.2);
+  /* Elevation 2 */
+}
+
+.theme-material .neo-button {
+  border: none;
+  border-radius: 9999px;
+  /* Pill */
+  text-transform: capitalize;
+  font-weight: 500;
+  box-shadow: none;
+  background: transparent;
+  color: var(--primary);
+  /* Ripple simulation via active state */
+}
+
+.theme-material .neo-button:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: none;
+  box-shadow: none;
+}
+
+.theme-material .neo-button-primary {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.theme-material .neo-button-primary:hover {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+  background: hsl(var(--primary) / 0.9) !important;
+}
+
+.theme-material .neo-input {
+  border: 1px solid transparent;
+  background: #f1f3f4;
+  border-radius: 8px;
+  box-shadow: none;
+  padding-left: 1rem;
+}
+
+.theme-material .neo-input:focus {
+  background: #ffffff;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-material .app-sidebar {
+  border-right: none;
+  /* Material sidebar often floats or has elevation */
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
+}
+
+.theme-material .neo-modal {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  /* Elevation 24 - Dialog */
+}
+
+/* --- Terminal / Tech (Developer) Theme --- */
+.theme-terminal {
+  --background: 0 0% 0%;
+  /* #000000 */
+  --foreground: 152 100% 50%;
+  /* #00FF88 Neon Green */
+
+  --card: 0 0% 5%;
+  /* Very dark grey, almost black */
+  --card-foreground: 152 100% 50%;
+
+  --popover: 0 0% 0%;
+  --popover-foreground: 152 100% 50%;
+
+  --primary: 152 100% 50%;
+  /* #00FF88 */
+  --primary-foreground: 0 0% 0%;
+
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 152 100% 50%;
+
+  --muted: 0 0% 10%;
+  --muted-foreground: 152 60% 40%;
+
+  --accent: 180 100% 50%;
+  /* #00FFFF Cyan */
+  --accent-foreground: 0 0% 0%;
+
+  --destructive: 0 100% 50%;
+  /* Red */
+  --destructive-foreground: 0 0% 0%;
+
+  --success: 152 100% 50%;
+
+  --border: 152 100% 50%;
+  --input: 0 0% 0%;
+  --ring: 152 100% 50%;
+
+  --radius: 0px;
+  /* Sharp edges */
+
+  --sidebar-background: 0 0% 0%;
+  --sidebar-foreground: 152 100% 50%;
+  --sidebar-primary: 152 100% 50%;
+  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 152 100% 50%;
+  --sidebar-border: 152 100% 50%;
+}
+
+.theme-terminal * {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.theme-terminal .neo-card,
+.theme-terminal .neo-card-flat,
+.theme-terminal .card {
+  border: 1px solid #00FF88;
+  background: #000000;
+  box-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
+  border-radius: 0;
+}
+
+.theme-terminal .neo-button {
+  background: #000000;
+  border: 1px solid #00FF88;
+  color: #00FF88;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.theme-terminal .neo-button:hover {
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+  transform: none;
+}
+
+.theme-terminal .neo-button-primary {
+  background: #00FF88 !important;
+  color: #000000 !important;
+  border: 1px solid #00FF88 !important;
+  font-weight: 900;
+}
+
+.theme-terminal .neo-button-primary:hover {
+  background: #00CC6A !important;
+  box-shadow: 0 0 10px #00FF88 !important;
+}
+
+.theme-terminal .neo-input,
+.theme-terminal input,
+.theme-terminal select,
+.theme-terminal textarea {
+  background: #000000 !important;
+  border: 1px solid #00FF88 !important;
+  color: #00FF88 !important;
+  border-radius: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.theme-terminal .neo-input:focus {
+  box-shadow: 0 0 5px #00FF88;
+  outline: none;
+}
+
+/* Modal */
+.theme-terminal .neo-modal {
+  border: 2px solid #00FF88;
+  background: #000000 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  border-radius: 0;
+}
+
+.theme-terminal .neo-modal-header {
+  border-bottom: 1px dashed #00FF88;
+  background: #000000;
+}
+
+/* Sidebar */
+.theme-terminal .app-sidebar {
+  border-right: 1px solid #00FF88;
+  background: #000000;
+}
+
+.theme-terminal .app-sidebar-link.active {
+  border: 1px solid #00FF88;
+  background: rgba(0, 255, 136, 0.1);
+  color: #00FF88;
+  box-shadow: none;
+}
+
+/* --- Retro Pixel (8-Bit) Theme --- */
+.theme-retro {
+  --background: 280 10% 20%;
+  /* Dark Purple Grey */
+  --foreground: 60 100% 90%;
+  /* Cream */
+
+  --card: 280 20% 15%;
+  /* Darker Purple */
+  --card-foreground: 60 100% 90%;
+
+  --popover: 280 20% 15%;
+  --popover-foreground: 60 100% 90%;
+
+  --primary: 340 100% 60%;
+  /* Hot Pink #ff3385 */
+  --primary-foreground: 60 100% 95%;
+
+  --secondary: 190 80% 60%;
+  /* Cyan */
+  --secondary-foreground: 0 0% 10%;
+
+  --muted: 280 15% 30%;
+  --muted-foreground: 280 10% 70%;
+
+  --accent: 45 100% 65%;
+  /* Yellow/Orange */
+  --accent-foreground: 0 0% 10%;
+
+  --destructive: 0 80% 60%;
+  /* Brick Red */
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 0%;
+  /* Black borders */
+  --input: 280 20% 10%;
+  --ring: 340 100% 60%;
+
+  --radius: 0px;
+
+  --sidebar-background: 280 20% 12%;
+  --sidebar-foreground: 60 100% 80%;
+  --sidebar-primary: 340 100% 60%;
+  --sidebar-primary-foreground: 60 100% 95%;
+  --sidebar-accent: 280 15% 25%;
+  --sidebar-accent-foreground: 60 100% 90%;
+  --sidebar-border: 60 100% 90%;
+  /* Light border */
+}
+
+/* Retro Pixel Font & Structure */
+.theme-retro * {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  /* Fallback to courier if font not loaded */
+  image-rendering: pixelated;
+  letter-spacing: 0.5px;
+}
+
+/* Retro Box Model - Intentionally blocky with thick borders */
+.theme-retro .neo-card,
+.theme-retro .neo-card-flat,
+.theme-retro .card,
+.theme-retro .neo-modal,
+.theme-retro .neo-input,
+.theme-retro .neo-button {
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+}
+
+/* Retro Inputs */
+.theme-retro .neo-input {
+  background: #fff;
+  color: #000;
+}
+
+/* Retro Buttons */
+.theme-retro .neo-button {
+  background: #ccc;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  /* Pixel fonts run large */
+  padding: 8px 16px;
+  position: relative;
+}
+
+.theme-retro .neo-button:hover {
+  background: #ddd;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.theme-retro .neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Retro Primary Button */
+.theme-retro .neo-button-primary {
+  background: #ff3385 !important;
+  /* Hot Pink */
+  color: #fff !important;
+  border-color: #000 !important;
+}
+
+.theme-retro .neo-button-primary:hover {
+  background: #ff66a3 !important;
+}
+
+/* Retro Sidebar */
+.theme-retro .app-sidebar {
+  border-right: 4px solid #000;
+  background: #2d2a32;
+}
+
+.theme-retro .app-sidebar-link {
+  border: 2px solid transparent;
+  /* Reserve space */
+  margin-bottom: 4px;
+}
+
+.theme-retro .app-sidebar-link:hover {
+  background: #444;
+  border: 2px dashed #000;
+}
+
+.theme-retro .app-sidebar-link.active {
+  background: #ff3385;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Retro Header/Navbar */
+.theme-retro header {
+  border-bottom: 4px solid #000 !important;
+  background: #3e3a47 !important;
+}
+
+/* Retro Text Overrides */
+.theme-retro h1,
+.theme-retro h2,
+.theme-retro h3 {
+  text-shadow: 2px 2px 0px #000;
+  color: #ffcc00;
+  /* Gold titles */
+}
+
+/* --- Microsoft Access (Classic Business) Theme --- */
+.theme-access {
+  --background: 220 14% 96%;
+  /* Light Gray/Blue background #f0f2f5 */
+  --foreground: 220 10% 20%;
+  /* Dark Gray text */
+
+  --card: 0 0% 100%;
+  /* White cards */
+  --card-foreground: 220 10% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 10% 20%;
+
+  --primary: 210 100% 35%;
+  /* Access Blue #005a9e */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 14% 90%;
+  /* Light Gray for buttons */
+  --secondary-foreground: 220 10% 20%;
+
+  --muted: 220 14% 90%;
+  --muted-foreground: 220 10% 60%;
+
+  --accent: 45 100% 90%;
+  /* Pale Yellow highlight */
+  --accent-foreground: 220 10% 20%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 13% 80%;
+  /* Standard gray border */
+  --input: 0 0% 100%;
+  --ring: 210 100% 35%;
+
+  --radius: 2px;
+  /* Very slight rounding */
+
+  --sidebar-background: 220 15% 90%;
+  /* Light gray sidebar */
+  --sidebar-foreground: 220 10% 20%;
+  --sidebar-primary: 210 100% 35%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 210 100% 90%;
+  /* Light blue selection */
+  --sidebar-accent-foreground: 210 100% 30%;
+  --sidebar-border: 220 13% 80%;
+}
+
+/* Access Typography */
+.theme-access * {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0px;
+}
+
+/* Access Top Navbar (Ribbon-ish) */
+.theme-access header {
+  background: white !important;
+  border-bottom: 1px solid #ccc !important;
+  box-shadow: none !important;
+  height: 48px !important;
+  /* Compact header */
+}
+
+/* Access Header Title */
+.theme-access header .font-display {
+  color: #005a9e;
+  /* Access Blue */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Access Navigation Tabs (Ribbon Tabs) */
+.theme-access nav a {
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+  margin-right: 2px;
+  color: #333;
+  padding: 4px 12px !important;
+  font-size: 13px !important;
+}
+
+.theme-access nav a:hover {
+  background-color: #f0f2f5;
+  border-color: #ccc;
+}
+
+.theme-access nav a.bg-primary\/10 {
+  background-color: #f0f2f5 !important;
+  border: 1px solid #ccc !important;
+  border-bottom: 1px solid #f0f2f5 !important;
+  color: #005a9e !important;
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+}
+
+/* Access Sidebar */
+.theme-access .app-sidebar {
+  border-right: 1px solid #ccc;
+  background: #f0f2f5;
+}
+
+.theme-access .app-sidebar-link {
+  border: 1px solid transparent;
+  margin: 1px 4px;
+}
+
+.theme-access .app-sidebar-link:hover {
+  background: white;
+  border: 1px solid #a0a0a0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.theme-access .app-sidebar-link.active {
+  background: white;
+  border: 1px solid #005a9e;
+  color: #005a9e;
+  font-weight: 600;
+}
+
+/* Access Forms (Inset fields) */
+.theme-access .neo-input {
+  background: white;
+  border: 1px solid #888;
+  border-top-color: #666;
+  /* Mild inset effect */
+  border-left-color: #666;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  height: 32px;
+  /* Compact inputs */
+  font-size: 13px;
+}
+
+.theme-access .neo-input:focus {
+  border-color: #005a9e;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px #005a9e;
+}
+
+/* Access Buttons */
+.theme-access .neo-button {
+  background: linear-gradient(to bottom, #fcfcfc, #e0e0e0);
+  border: 1px solid #888;
+  color: #333;
+  border-radius: 2px;
+  font-size: 13px;
+  padding: 4px 12px;
+  font-weight: normal;
+}
+
+.theme-access .neo-button:hover {
+  background: linear-gradient(to bottom, #dfdfdf, #d0d0d0);
+  border-color: #666;
+}
+
+.theme-access .neo-button:active {
+  background: #ccc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary Button Override */
+.theme-access .neo-button-primary {
+  background: linear-gradient(to bottom, #0078d7, #005a9e) !important;
+  color: white !important;
+  border: 1px solid #004578 !important;
+}
+
+.theme-access .neo-button-primary:hover {
+  background: linear-gradient(to bottom, #005a9e, #004578) !important;
+}
+
+/* Cards / Group Boxes */
+.theme-access .neo-card,
+.theme-access .neo-card-flat,
+.theme-access .card {
+  border: 1px solid #ccc;
+  box-shadow: none;
+  border-radius: 2px;
+  background: white;
+}
+
+.theme-access .neo-card h2,
+.theme-access .neo-card h3 {
+  color: #005a9e;
+  border-bottom: 2px solid #e0e0e0;
+  /* Section divider */
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Field Labels */
+.theme-access label {
+  color: #444;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Table appearance overrides */
+.theme-access table {
+  border: 1px solid #ccc;
+}
+
+.theme-access th {
+  background: #e0e0e0;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #ccc;
+  color: #333;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.theme-access td {
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #f0f0f0;
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+.theme-access tr:nth-child(even) {
+  background-color: #f9f9f9;
+  /* Zebra striping */
+}
+
+/* Modal Headers */
+.theme-access .neo-modal header {
+  background: linear-gradient(to right, #005a9e, #0078d7);
+  color: white;
+  padding: 8px 12px;
+  border-bottom: 1px solid #004578;
+}
+
+.theme-access .neo-modal header h2 {
+  color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+}

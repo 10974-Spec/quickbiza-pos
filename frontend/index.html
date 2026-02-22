@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>QuickBiza POS</title>
+  <meta name="description" content="POS system" />
+
+  <!-- Scripts removed to prevent console errors -->
+  <!-- TODO: Update og:title to match your application name -->
+
+
+  <meta property="og:type" content="website" />
+
+  <!-- Icon Systems CDNs -->
+  <!-- Font Awesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Boxicons (as a fallback/extra) -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Pixelarticons -->
+  <link href="https://unpkg.com/pixelarticons@1.8.1/fonts/pixelart-icons-font.css" rel="stylesheet">
+  <!-- Fluent UI System Icons (Web Components) -->
+  <!-- Note: Fluent UI often requires JS, but we'll use a CSS version if available or handle via JS components if needed. 
+       For now, we'll rely on the SVGs or a font if we can find one, but Microsoft recommends SVGs.
+       We will likely implement Fluent via direct SVG mappings or a library wrapper if possible. 
+       Actually, let's keep it simple and just use the ones we can easily link via CSS or use the new Icon component logic. 
+  -->
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

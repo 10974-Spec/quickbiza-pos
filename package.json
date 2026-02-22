@@ -1,0 +1,74 @@
+{
+    "name": "quickbiza",
+    "version": "1.0.2",
+    "description": "QuickBiza POS Electron App",
+    "main": "electron/main.js",
+    "scripts": {
+        "start": "electron .",
+        "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev --prefix frontend\" \"npm run dev --prefix backend\" \"npm run dev --prefix web\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron . --no-sandbox\"",
+        "build:frontend": "npm run build --prefix frontend",
+        "electron:build": "npm run build:frontend && npm run rebuild-deps && electron-builder",
+        "rebuild-deps": "electron-builder install-app-deps && npm install --prefix backend better-sqlite3 node-hid --force --no-save --runtime=electron --target=28.3.3 --dist-url=https://electronjs.org/headers",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "build": {
+        "appId": "com.quickbiza.pos",
+        "productName": "QuickBiza",
+        "icon": "frontend/public/Appicon.png",
+        "publish": {
+            "provider": "github",
+            "owner": "nyakoe",
+            "repo": "quickbiza-pos"
+        },
+        "files": [
+            "electron/**/*",
+            "backend/**/*",
+            "frontend/dist/**/*",
+            "package.json"
+        ],
+        "directories": {
+            "output": "dist-electron"
+        },
+        "extraResources": [
+            {
+                "from": "backend",
+                "to": "backend",
+                "filter": [
+                    "**/*",
+                    "!*.log",
+                    "!*.db*"
+                ]
+            }
+        ],
+        "win": {
+            "target": "nsis"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "QuickBiza POS",
+            "uninstallDisplayName": "QuickBiza POS"
+        },
+        "linux": {
+            "target": "AppImage",
+            "category": "Office"
+        }
+    },
+    "author": "Nyakoe",
+    "license": "MIT",
+    "devDependencies": {
+        "app-builder-bin": "^4.2.0",
+        "concurrently": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "electron": "^28.2.0",
+        "electron-builder": "^24.13.3",
+        "electron-rebuild": "^3.2.9",
+        "wait-on": "^7.2.0"
+    },
+    "dependencies": {
+        "electron-log": "^5.4.3",
+        "electron-updater": "^6.7.3"
+    }
+}

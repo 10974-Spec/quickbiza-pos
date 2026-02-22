@@ -1,0 +1,9 @@
+version: 1.0.2
+files:
+  - url: QuickBiza-1.0.2.AppImage
+    sha512: VRd8MNDlbb3kIylF8K4fLUtXCBq+ig4Iql4hWelhoovb1DeG4iNAMa7muTlCFPkJqRk0p6kzh44+6uGdJ9oSwA==
+    size: 139685409
+    blockMapSize: 146997
+path: QuickBiza-1.0.2.AppImage
+sha512: VRd8MNDlbb3kIylF8K4fLUtXCBq+ig4Iql4hWelhoovb1DeG4iNAMa7muTlCFPkJqRk0p6kzh44+6uGdJ9oSwA==
+releaseDate: '2026-02-22T16:05:08.088Z'
