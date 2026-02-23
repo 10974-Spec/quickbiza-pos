@@ -64,7 +64,8 @@ export default function Login() {
                     --background: #f0ede8;
                     --foreground: #18181b;
                     --muted-foreground: #71717a;
-                    --border: #e4e4e7;
+                    --border: #e2ddd8;
+                    --primary: #ea580c;
                 }
 
                 @keyframes fadeUp {
@@ -101,10 +102,10 @@ export default function Login() {
                 .card {
                     width: 100%; max-width: 900px;
                     background: #fff;
-                    border: 1px solid #e2ddd8;
+                    border: 1px solid var(--border);
                     border-radius: 20px;
                     display: flex; overflow: hidden;
-                    box-shadow: 0 12px 48px rgba(0,0,0,0.1);
+                    box-shadow: 0 12px 48px rgba(0,0,0,0.08);
                     flex: 1; min-height: 0;
                 }
 
@@ -115,10 +116,9 @@ export default function Login() {
                     padding: 44px 40px;
                     display: flex; flex-direction: column;
                     justify-content: space-between;
-                    border-right: 1px solid #e8e3dd;
+                    border-right: 1px solid var(--border);
                     position: relative; overflow: hidden;
                 }
-                .left-top {}
                 .left-tag {
                     display: inline-flex; align-items: center;
                     border: 1.5px solid var(--foreground);
@@ -219,7 +219,7 @@ export default function Login() {
                 }
                 .hint {
                     margin-top: 20px; padding: 10px 14px;
-                    background: #f5f1ec; border: 1px solid #e8e3dd;
+                    background: #f5f1ec; border: 1px solid var(--border);
                     border-radius: 10px; font-size: 11px; color: var(--muted-foreground);
                     text-align: center;
                 }

@@ -1,6 +1,6 @@
 {
     "name": "quickbiza",
-    "version": "1.0.2",
+    "version": "1.0.0",
     "description": "QuickBiza POS Electron App",
     "main": "electron/main.js",
     "scripts": {
@@ -52,11 +52,19 @@
             "uninstallDisplayName": "QuickBiza POS"
         },
         "linux": {
-            "target": "AppImage",
+            "target": [
+                "AppImage",
+                "deb",
+                "zip"
+            ],
             "category": "Office"
         }
     },
-    "author": "Nyakoe",
+    "homepage": "https://github.com/nyakoe/quickbiza-pos",
+    "author": {
+        "name": "Nyakoe",
+        "email": "support@quickbiza.com"
+    },
     "license": "MIT",
     "devDependencies": {
         "app-builder-bin": "^4.2.0",

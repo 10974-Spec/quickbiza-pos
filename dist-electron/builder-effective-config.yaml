@@ -31,6 +31,9 @@ nsis:
   shortcutName: QuickBiza POS
   uninstallDisplayName: QuickBiza POS
 linux:
-  target: AppImage
+  target:
+    - AppImage
+    - deb
+    - zip
   category: Office
 electronVersion: 28.3.3
