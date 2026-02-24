@@ -18,7 +18,7 @@
         "icon": "frontend/public/Appicon.png",
         "publish": {
             "provider": "github",
-            "owner": "nyakoe",
+            "owner": "10974-Spec",
             "repo": "quickbiza-pos"
         },
         "files": [
