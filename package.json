@@ -1,6 +1,6 @@
 {
     "name": "quickbiza",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "QuickBiza POS Electron App",
     "main": "electron/main.js",
     "scripts": {
