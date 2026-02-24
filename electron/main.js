@@ -80,53 +80,41 @@ function waitForBackend() {
     });
 }
 
-// ─── Start the bundled backend ─────────────────────────────────────────────────
+// ─── Start the bundled backend (In-Process) ────────────────────────────────────
 async function startBackend() {
     if (isDev) {
-        log('Dev mode: skipping backend spawn');
+        log('Dev mode: skipping bundled backend (using external dev server)');
         return;
     }
 
-    await killProcessOnPort(BACKEND_PORT);
+    log('Starting backend INSIDE Electron main process...');
 
     const backendDir = app.isPackaged
         ? path.join(process.resourcesPath, 'backend')
         : path.join(__dirname, '../backend');
-    // Use the CommonJS loader which bridges CJS → ESM via dynamic import().
-    // This works with process.execPath + ELECTRON_RUN_AS_NODE on any machine
-    // without needing a separate system Node.js installation.
-    const loaderEntry = path.join(backendDir, 'loader.cjs');
 
-    log(`Starting backend via loader: ${loaderEntry}`);
+    // Set required environment variables before requiring the backend
+    process.env.NODE_ENV = 'production';
+    process.env.USER_DATA_PATH = app.getPath('userData');
+    process.env.PORT = String(BACKEND_PORT);
+    process.env.HOST = '127.0.0.1';
 
-    if (!fs.existsSync(loaderEntry)) {
-        logErr(`Backend loader NOT FOUND at: ${loaderEntry}`);
-        return;
+    // Instead of spawning a child process which fails heavily on Windows depending on
+    // path and NodeJS environments, we simply require the backend directly into the
+    // Electron main process. This is the most reliable cross-platform method.
+    try {
+        const loaderEntry = path.join(backendDir, 'loader.cjs');
+        if (!fs.existsSync(loaderEntry)) {
+            logErr(`Backend loader NOT FOUND at: ${loaderEntry}`);
+            return;
+        }
+
+        // Execute the loader in the current process
+        require(loaderEntry);
+        log('Backend successfully started internally.');
+    } catch (err) {
+        logErr(`Failed to start internal backend: ${err.message}\n${err.stack}`);
     }
-
-    backendProcess = spawn(process.execPath, [loaderEntry], {
-        env: {
-            ...process.env,
-            ELECTRON_RUN_AS_NODE: '1',
-            NODE_ENV: 'production',
-            USER_DATA_PATH: app.getPath('userData'),
-            PORT: String(BACKEND_PORT),
-            HOST: '127.0.0.1',
-        },
-        cwd: backendDir,
-        stdio: ['ignore', 'pipe', 'pipe'],
-    });
-
-    if (!backendProcess.pid) {
-        logErr('Failed to spawn backend process (no PID)');
-        return;
-    }
-    log(`Backend PID: ${backendProcess.pid}`);
-
-    backendProcess.stdout.on('data', (d) => log(`[backend] ${d.toString().trim()}`));
-    backendProcess.stderr.on('data', (d) => logErr(`[backend] ${d.toString().trim()}`));
-    backendProcess.on('exit', (code) => log(`Backend exited with code ${code}`));
-    backendProcess.on('error', (err) => logErr(`Backend spawn error: ${err.message}`));
 }
 
 // ─── Create main window ────────────────────────────────────────────────────────

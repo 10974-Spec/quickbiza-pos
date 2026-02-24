@@ -1,6 +1,6 @@
 {
     "name": "quickbiza",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "QuickBiza POS Electron App",
     "main": "electron/main.js",
     "scripts": {
@@ -12,6 +12,7 @@
         "postinstall": "electron-builder install-app-deps"
     },
     "build": {
+        "asar": false,
         "appId": "com.quickbiza.pos",
         "productName": "QuickBiza",
         "icon": "frontend/public/Appicon.png",
@@ -76,6 +77,7 @@
         "wait-on": "^7.2.0"
     },
     "dependencies": {
+        "@electron/rebuild": "^4.0.3",
         "electron-log": "^5.4.3",
         "electron-updater": "^6.7.3"
     }

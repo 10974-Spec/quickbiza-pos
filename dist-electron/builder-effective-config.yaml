@@ -1,6 +1,7 @@
 directories:
   output: dist-electron
   buildResources: build
+asar: false
 appId: com.quickbiza.pos
 productName: QuickBiza
 icon: frontend/public/Appicon.png
