@@ -1,0 +1,64 @@
+[72758:0223/001144.990221:WARNING:sandbox_linux.cc(400)] InitializeSandbox() called with multiple threads in process gpu-process.
+[72698:0223/001145.082549:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
+[72698:0223/001145.478978:INFO:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/sandbox_bundle (2)
+[72698:0223/001147.908934:WARNING:electron_api_native_image.cc(194)] Failed to load image from path '/home/nyakoe/Desktop/aroma/frontend/public/favicon.ico'
+[72698:0223/001149.786590:INFO:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/renderer_init (2)
+[72698:0223/001149.807873:WARNING:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/renderer_init (2)
+00:11:53.486 › APPIMAGE env is not defined, current application is not an AppImage
+00:11:53.491 › checkForUpdatesAndNotify called, downloadPromise is null
+[72758:0223/001201.134168:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[72758:0223/001201.138692:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[72758:0223/001201.141073:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[72698:0223/001205.600200:INFO:CONSOLE(1507)] "Error fetching dashboard data: AxiosError: Request failed with status code 500", source: file:///home/nyakoe/Desktop/aroma/frontend/dist/assets/index-DcXie7Jp.js (1507)
+[72698:0223/001251.070898:INFO:CONSOLE(40)] "Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", source: file:///home/nyakoe/Desktop/aroma/frontend/dist/assets/index-DcXie7Jp.js (40)
+[72698:0223/001251.071146:INFO:CONSOLE(40)] "Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2", source: file:///home/nyakoe/Desktop/aroma/frontend/dist/assets/index-DcXie7Jp.js (40)
+[72698:0223/001251.072244:INFO:CONSOLE(40)] "Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://unpkg.com/pixelarticons@1.8.1/fonts/pixelart-icons-font.woff2?t=1711815892278", source: file:///home/nyakoe/Desktop/aroma/frontend/dist/assets/index-DcXie7Jp.js (40)
+(node:72698) electron: Failed to load URL: file:///login with error: ERR_FILE_NOT_FOUND
+(Use `electron --trace-warnings ...` to show where the warning was created)
+[72698:0223/001301.649943:INFO:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/renderer_init (2)
+(node:72698) electron: Failed to load URL: file:///login with error: ERR_FILE_NOT_FOUND
+[72698:0223/001305.007140:INFO:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/renderer_init (2)
+(node:72698) electron: Failed to load URL: file:///login with error: ERR_FILE_NOT_FOUND
+[72698:0223/001308.926214:INFO:CONSOLE(2)] "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.", source: node:electron/js2c/renderer_init (2)
