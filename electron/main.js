@@ -89,6 +89,9 @@ async function startBackend() {
 
     log('Starting backend INSIDE Electron main process...');
 
+    // Crucial: we must free the port in case of a crash or zombie process
+    await killProcessOnPort(BACKEND_PORT);
+
     const backendDir = app.isPackaged
         ? path.join(process.resourcesPath, 'backend')
         : path.join(__dirname, '../backend');
