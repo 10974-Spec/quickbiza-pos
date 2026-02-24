@@ -22,8 +22,13 @@ export default function Login() {
         }
         setLoading(true);
         try {
-            await login(username, password);
-            toast.success('Login successful!');
+            const data = await login(username, password);
+            if (localStorage.getItem('inviteJoined')) {
+                toast.success(`You have successfully joined ${data?.company_name || 'the company'}!`);
+                localStorage.removeItem('inviteJoined');
+            } else {
+                toast.success('Login successful!');
+            }
             navigate('/');
         } catch (error: any) {
             console.error('Login error:', error);

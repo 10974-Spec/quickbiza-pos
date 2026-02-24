@@ -14,7 +14,7 @@ interface User {
 interface AuthContextType {
     user: User | null;
     token: string | null;
-    login: (username: string, password: string) => Promise<void>;
+    login: (username: string, password: string) => Promise<any>;
     loginWithToken: (token: string, user: User) => void;
     updateUser: (updatedData: Partial<User>) => void;
     logout: () => void;
@@ -54,6 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(data.user);
         localStorage.setItem('auth_token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
+        return data;
     };
 
     const loginWithToken = (token: string, user: User) => {

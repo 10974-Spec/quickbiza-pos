@@ -39,6 +39,10 @@ export default function Register() {
                 invite_code: formData.invite_code
             });
 
+            if (formData.invite_code) {
+                localStorage.setItem('inviteJoined', 'true');
+            }
+
             toast.success("Registration successful! Please login.");
             navigate("/login");
         } catch (error: any) {
