@@ -1,12 +1,12 @@
 version: 1.0.5
 files:
   - url: QuickBiza-1.0.5.AppImage
-    sha512: uWs/zSuPbTtCNBlIOUFm5BfWkrJVGW8aiZpOVuWMthQqn1Krpuc4G/+wspDXSKZ7Z+FH8m3IylLq2GM/ZFPzCQ==
-    size: 155153986
-    blockMapSize: 161366
+    sha512: TIb5FjsWxoyAqVRZpzoWrAMa7rGKRoBL82gCLdcimsiy1+MtbFCU5jBJ6nS0M2l7qbGY2g855n562Lh9dKFUsw==
+    size: 155154028
+    blockMapSize: 161408
   - url: quickbiza_1.0.5_amd64.deb
-    sha512: iJvPiygYcVU2sOpdvPQ500Hj4tJI62uBwl2doAHsDxGyiD+qfJD/tuco9AlGnAo6gVTbNSeOcOjGi9QRftOqZA==
-    size: 106684634
+    sha512: SSd1V5odm03toDNWN93EWFW1nPS7nOvjk5Vx0KXM4jRHOafXgoM5O9NF3JpF/xf5pQxQumHTs+/moRisp9eQFQ==
+    size: 106667028
 path: QuickBiza-1.0.5.AppImage
-sha512: uWs/zSuPbTtCNBlIOUFm5BfWkrJVGW8aiZpOVuWMthQqn1Krpuc4G/+wspDXSKZ7Z+FH8m3IylLq2GM/ZFPzCQ==
-releaseDate: '2026-02-24T18:04:48.571Z'
+sha512: TIb5FjsWxoyAqVRZpzoWrAMa7rGKRoBL82gCLdcimsiy1+MtbFCU5jBJ6nS0M2l7qbGY2g855n562Lh9dKFUsw==
+releaseDate: '2026-02-24T18:37:55.284Z'
