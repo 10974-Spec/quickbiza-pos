@@ -1,8 +1,8 @@
-version: 1.0.2
+version: 1.0.3
 files:
-  - url: QuickBiza-Setup-1.0.2.exe
-    sha512: 71lthKlpVj6FpQaAeXik1ekcw/qFqtZtRetoyIQ2K4ZWISy/9HAtgIFT5l60kHYtrHLhGf93mqSyp92+HvtnZg==
-    size: 121284599
-path: QuickBiza-Setup-1.0.2.exe
-sha512: 71lthKlpVj6FpQaAeXik1ekcw/qFqtZtRetoyIQ2K4ZWISy/9HAtgIFT5l60kHYtrHLhGf93mqSyp92+HvtnZg==
-releaseDate: '2026-02-24T12:00:33.882Z'
+  - url: QuickBiza-Setup-1.0.3.exe
+    sha512: k11lMJVJ9KrPvDDiYIgZsC3ui7UBNolI2qYACmT39G1bkw3ujgjw7pTpnUzY2n3WrpHl0rxiHlohcS4oKxsrmg==
+    size: 122394836
+path: QuickBiza-Setup-1.0.3.exe
+sha512: k11lMJVJ9KrPvDDiYIgZsC3ui7UBNolI2qYACmT39G1bkw3ujgjw7pTpnUzY2n3WrpHl0rxiHlohcS4oKxsrmg==
+releaseDate: '2026-02-24T12:39:35.236Z'
